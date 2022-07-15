@@ -13,6 +13,12 @@ const Home = () => {
             <div className="flex flex-col max-w-fit mx-auto mb-4">
               <Link
                 className="lg:text-2xl text-center text-md text-white border-2 rounded-md p-2 mb-6 hover:scale-110 duration-500"
+                to="/topCrypto"
+              >
+                Trending Crypto
+              </Link>
+              <Link
+                className="lg:text-2xl text-center text-md text-white border-2 rounded-md p-2 mb-6 hover:scale-110 duration-500"
                 to="/converter"
               >
                 Convert your Crypto

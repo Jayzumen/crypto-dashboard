@@ -27,7 +27,7 @@ const NewsFeed = () => {
     <div className="w-screen h-screen ">
       <div className="pt-32 text-center leading-8">
         <h1 className="mb-12 mt-10 text-4xl font-bold underline">
-          Newest Crypto News
+          Newest Crypto Articles
         </h1>
         <h2 className="text-2xl font-bold mb-10">
           Check out the articles below

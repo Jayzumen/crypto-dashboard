@@ -34,7 +34,7 @@ app.get("/news", (req, res) => {
     });
 });
 
-// CRYPTO API
+// CRYPTO Converter API
 app.get("/convert", (req, res) => {
   const toCurrency = req.query.to_currency;
   const fromCurrency = req.query.from_currency;
@@ -67,6 +67,21 @@ app.get("/convert", (req, res) => {
     });
 });
 
-app.listen(8000, () => console.log(`Server is running on Port ${PORT}`));
+// TOP CRYPTO API
+app.get("/topCrypto", (req, res) => {
+  const options = {
+    method: "GET",
+    url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=10&page=1&sparkline=true",
+  };
 
-//
+  axios
+    .request(options)
+    .then(function (response) {
+      res.json(response.data);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+});
+
+app.listen(8000, () => console.log(`Server is running on Port ${PORT}`));

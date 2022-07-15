@@ -13,11 +13,16 @@ const Navbar = () => {
     },
     {
       id: 2,
+      name: "Top Crypto",
+      link: "/topCrypto",
+    },
+    {
+      id: 3,
       name: "Currency Converter",
       link: "/converter",
     },
     {
-      id: 3,
+      id: 4,
       name: "News",
       link: "/news",
     },
@@ -26,7 +31,9 @@ const Navbar = () => {
   return (
     <div className="flex justify-between items-center w-full h-20 text-white px-4 fixed z-10 bg-gradient-to-b from-slate-800 to-slate-900">
       <div>
-        <h1 className="text-4xl font-serif m-2 text-gray-300 ">Crypto Space</h1>
+        <h1 className="text-4xl font-serif m-2 text-gray-300 ">
+          <a href="/">Crypto Space</a>
+        </h1>
       </div>
       <ul className="hidden md:flex">
         {links.map(({ id, name, link }) => (
