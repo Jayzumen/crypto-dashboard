@@ -73,6 +73,7 @@ const TopCrypto = () => {
                   ) {
                     return value;
                   }
+                  return false;
                 })
                 .map((coin) => (
                   <tr

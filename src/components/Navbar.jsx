@@ -18,7 +18,7 @@ const Navbar = () => {
     },
     {
       id: 3,
-      name: "Currency Converter",
+      name: "Crypto Converter",
       link: "/converter",
     },
     {
