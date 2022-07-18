@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import NewsFeed from "./components/NewsFeed";
 import Home from "./components/Home";
 import TopCrypto from "./components/TopCrypto";
+import Coins from "./components/Coins";
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         <Route element={<TopCrypto />} path="/topCrypto" />
         <Route element={<CurrencyConverter />} path="/converter" />
         <Route element={<NewsFeed />} path="/news" />
+        <Route element={<Coins />} path="/coin/:coinId">
+          <Route path=":coinId" />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

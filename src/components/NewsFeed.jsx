@@ -21,7 +21,7 @@ const NewsFeed = () => {
       });
   }, []);
 
-  const firstArticles = articles?.slice(0, 10);
+  const firstArticles = articles?.slice(0, 5);
 
   return (
     <div className="w-screen h-screen ">
@@ -32,10 +32,12 @@ const NewsFeed = () => {
         <h2 className="text-2xl font-bold mb-10">
           Check out the articles below
         </h2>
+
+        {/* Mapping through the articles */}
         {firstArticles?.map((article, _index) => (
           <div key={_index} className="m-4">
             <a href={article.url} target="_blank" rel="noreferrer">
-              <p className="text-xl hover:text-gray-400 duration-300">
+              <p className="text-2xl my-8 hover:text-gray-400 duration-300">
                 {article.title}
               </p>
             </a>

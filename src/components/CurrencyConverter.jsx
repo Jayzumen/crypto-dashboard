@@ -3,7 +3,7 @@ import ExchangeRate from "./ExchangeRate";
 import axios from "axios";
 
 const CurrencyConverter = () => {
-  const currencies = ["BTC", "ETC", "EUR", "XRP", "LTC", "ADA"];
+  const currencies = ["BTC", "ETC", "USD", "XRP", "LTC", "ADA"];
   const [chosenPrimaryCurrency, setChosenPrimaryCurrency] = useState("BTC");
   const [chosenSecondaryCurrency, setChosenSecondaryCurrency] = useState("BTC");
   const [amount, setAmount] = useState(1);
@@ -59,7 +59,7 @@ const CurrencyConverter = () => {
                 onChange={(e) => setAmount(e.target.value)}
               />
               <select
-                className="text-xl p-2 rounded-md bg-gray-600 text-white font-bold"
+                className="text-xl p-2 rounded-md bg-gray-600 text-white font-bold cursor-pointer"
                 name="currency-option-1"
                 value={chosenPrimaryCurrency}
                 onChange={(e) => setChosenPrimaryCurrency(e.target.value)}
@@ -82,7 +82,7 @@ const CurrencyConverter = () => {
                 disabled
               />
               <select
-                className="text-xl p-2 rounded-md bg-gray-600 text-white font-bold"
+                className="text-xl p-2 rounded-md bg-gray-600 text-white font-bold cursor-pointer"
                 name="currency-option-2"
                 value={chosenSecondaryCurrency}
                 onChange={(e) => setChosenSecondaryCurrency(e.target.value)}

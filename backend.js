@@ -13,7 +13,6 @@ app.get("/", (req, res) => {
 });
 
 // NEWS API
-
 app.get("/news", (req, res) => {
   const options = {
     method: "GET",
@@ -61,23 +60,6 @@ app.get("/convert", (req, res) => {
       res.json(
         response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
       );
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
-});
-
-// TOP CRYPTO API
-app.get("/topCrypto", (req, res) => {
-  const options = {
-    method: "GET",
-    url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=10&page=1&sparkline=true",
-  };
-
-  axios
-    .request(options)
-    .then(function (response) {
-      res.json(response.data);
     })
     .catch(function (error) {
       console.error(error);
