@@ -17,11 +17,15 @@ const CurrencyConverter = () => {
   const convert = () => {
     const options = {
       method: "GET",
-      url: "http://localhost:8000/convert",
+      url: "https://alpha-vantage.p.rapidapi.com/query",
       params: {
         from_currency: chosenPrimaryCurrency,
         function: "CURRENCY_EXCHANGE_RATE",
         to_currency: chosenSecondaryCurrency,
+      },
+      headers: {
+        "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
+        "X-RapidAPI-Host": "alpha-vantage.p.rapidapi.com",
       },
     };
 
@@ -29,11 +33,17 @@ const CurrencyConverter = () => {
       .request(options)
       .then(function (response) {
         // console.log(response.data);
-        setResult(response.data * amount);
+        setResult(
+          response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"] *
+            amount
+        );
         setExchangedData({
           primaryCurrency: chosenPrimaryCurrency,
           secondaryCurrency: chosenSecondaryCurrency,
-          exchangeRate: response.data,
+          exchangeRate:
+            response.data["Realtime Currency Exchange Rate"][
+              "5. Exchange Rate"
+            ],
         });
       })
       .catch(function (error) {
