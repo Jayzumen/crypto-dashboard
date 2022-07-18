@@ -45,12 +45,14 @@ const CurrencyConverter = () => {
     <div className="w-full h-screen">
       <div className="pt-20 flex flex-col flex-wrap justify-center">
         <h2 className="mt-20 mb-10 text-center text-4xl font-bold underline">
-          Currency Converter
+          Crypto Converter
         </h2>
         <div className="mx-auto">
           <div className="flex flex-col flex-wrap justify-center text-center">
             <div>
-              <p className="text-xl text-center mt-8 mb-4">Primary Currency</p>
+              <p className="text-xl text-center mt-8 mb-4">
+                Currency to convert
+              </p>
               <input
                 className="p-2 border-none rounded-md bg-gray-500 mx-4 my-2 text-xl"
                 type="number"
@@ -72,7 +74,7 @@ const CurrencyConverter = () => {
 
             <div>
               <p className="text-xl text-center mt-8 mb-4">
-                Secondary Currency
+                Converted Currency
               </p>
               <input
                 className="p-2 border-none rounded-md bg-gray-500 mx-4 my-2 text-xl"
